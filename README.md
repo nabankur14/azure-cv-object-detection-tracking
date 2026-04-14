@@ -50,7 +50,8 @@ End-to-end cloud AI pipeline detecting and tracking multiple objects in images a
 
 ---
 
-## 01 · Project Overview
+<details>
+<summary><h2>01 · Project Overview</h2></summary>
 
 This project implements a **production-grade, cloud-native computer vision pipeline** that detects and tracks multiple real-world objects using the Microsoft Azure Computer Vision Image Analysis API. Built entirely in Python on Google Colab, it demonstrates how enterprise-grade AI services can be integrated into a reproducible, secure, and evaluable research workflow.
 
@@ -64,9 +65,12 @@ The pipeline processes both static images and dynamic video, applying **IoU-base
 - **Critical analysis** — identified and explained a real multi-label false positive (Land vehicle FP)
 - **Custom tracking algorithm** — IoU greedy matcher implemented from scratch
 
+</details>
+
 ---
 
-## 02 · Business Problem
+<details>
+<summary><h2>02 · Business Problem</h2></summary>
 
 Organisations across smart cities, retail, and logistics face a common challenge: **automatically identifying and tracking objects of interest in visual data at scale** — without the cost or timeline of training custom models.
 
@@ -87,9 +91,12 @@ Traditional computer vision solutions require large labelled datasets, specialis
 
 Leverage **Azure Computer Vision as a managed MLaaS (Machine Learning as a Service)** solution — eliminating model training overhead while delivering production-grade detection accuracy, then extending it with custom tracking logic to enable video analytics.
 
+</details>
+
 ---
 
-## 03 · System Architecture
+<details>
+<summary><h2>03 · System Architecture</h2></summary>
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -118,9 +125,12 @@ Leverage **Azure Computer Vision as a managed MLaaS (Machine Learning as a Servi
 
 The architecture follows a **client-cloud model**: all orchestration logic runs locally in Google Colab (Python), while the heavy neural network inference is delegated to Azure's managed Computer Vision service via a secure REST API call. This eliminates GPU requirements and infrastructure costs entirely.
 
+</details>
+
 ---
 
-## 04 · End-to-End Pipeline
+<details>
+<summary><h2>04 · End-to-End Pipeline</h2></summary>
 
 ![End-to-end pipeline process flowchart](assets/End-to-end%20pipeline%20process%20flowchart.png)
 
@@ -138,9 +148,12 @@ The architecture follows a **client-cloud model**: all orchestration logic runs 
 
 > **Insert here:** Screenshot of your Colab notebook running — showing Section 3 detection cell output and the 2×2 tracking dashboard side by side.
 
+</details>
+
 ---
 
-## 05 · Methodology
+<details>
+<summary><h2>05 · Methodology</h2></summary>
 
 ### 3.1 Azure Resource Provisioning
 
@@ -166,9 +179,12 @@ Bounding boxes annotated manually using a matplotlib `RectangleSelector` widget 
 
 Two separate evaluation frameworks applied: **detection evaluation** using PASCAL VOC (IoU ≥ 0.50) and **tracking evaluation** using Track Precision, Track Recall, and Fragmentation count per object class.
 
+</details>
+
 ---
 
-## 06 · Key Results
+<details>
+<summary><h2>06 · Key Results</h2></summary>
 
 ### Detection performance (IoU threshold = 0.50)
 
@@ -191,9 +207,12 @@ Two separate evaluation frameworks applied: **detection evaluation** using PASCA
 
 > **Insert here:** Your `detected_output.jpg` (annotated bounding box image) and the 2×2 tracking trajectory dashboard side by side.
 
+</details>
+
 ---
 
-## 07 · Key Learnings
+<details>
+<summary><h2>07 · Key Learnings</h2></summary>
 
 - **Managed AI services deliver strong zero-training accuracy** — Azure CV achieved F1=1.000 on all primary objects without any fine-tuning, validating the MLaaS approach for common object classes.
 - **Cloud API latency is the primary bottleneck for video analytics** — 2.91s per call makes real-time (>15fps) processing impractical without edge deployment. Frame subsampling is an essential mitigation strategy.
@@ -202,9 +221,12 @@ Two separate evaluation frameworks applied: **detection evaluation** using PASCA
 - **Circular evaluation is a common methodological trap** — Using Azure's own output as ground truth produces artificially perfect scores. Independent manual annotation is essential for honest performance reporting.
 - **Confidence filtering and label whitelisting are essential post-processing steps** — Without MIN_CONFIDENCE=0.55 and an allowed-label list, Azure returns 33 noisy tracks including tyres, jeans, and footwear as separate objects.
 
+</details>
+
 ---
 
-## 08 · Business Impact
+<details>
+<summary><h2>08 · Business Impact</h2></summary>
 
 ### Cost efficiency
 
@@ -224,9 +246,12 @@ The Azure-hosted architecture scales automatically with demand — no infrastruc
 - Vehicle dwell-time estimation from near-stationary car tracks (18px displacement)
 - Multi-class scene understanding in a single API call (person + vehicle + animal)
 
+</details>
+
 ---
 
-## 09 · Skills & Technology Stack
+<details>
+<summary><h2>09 · Skills & Technology Stack</h2></summary>
 
 #### Core Languages
 
@@ -266,9 +291,12 @@ The Azure-hosted architecture scales automatically with demand — no infrastruc
 - Secure credential management: Colab Secrets, zero-hardcoding practice
 - Technical report writing: academic methodology, results, discussion
 
+</details>
+
 ---
 
-## 10 · Future Improvements
+<details>
+<summary><h2>10 · Future Improvements</h2></summary>
 
 | # | Improvement | Description |
 |:--|:--|:--|
@@ -279,9 +307,12 @@ The Azure-hosted architecture scales automatically with demand — no infrastruc
 | 05 | **Batch Processing Pipeline** | Parallelise API calls using Python asyncio to process multiple video streams simultaneously. |
 | 06 | **Auto Ground Truth Tooling** | Integrate LabelImg or CVAT for semi-automated ground truth annotation to replace manual bounding box drawing. |
 
+</details>
+
 ---
 
-## 11 · Repository Structure
+<details>
+<summary><h2>11 · Repository Structure</h2></summary>
 
 ```
 azure-cv-object-detection-tracking/
@@ -308,9 +339,12 @@ azure-cv-object-detection-tracking/
     └── Create Computer Vision resource in Microsoft Azure.pdf       # Azure setup guide
 ```
 
+</details>
+
 ---
 
-## 12 · Quick Start
+<details>
+<summary><h2>12 · Quick Start</h2></summary>
 
 ### Prerequisites
 
@@ -347,6 +381,8 @@ Runtime → Run all  (Ctrl+F9)
 ```
 
 > ⚠️ **Security note:** Never hardcode API keys in notebook cells. Always use Colab Secrets or environment variables. The credentials are never written to disk or included in git history.
+
+</details>
 
 ---
 
