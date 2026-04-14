@@ -2,7 +2,7 @@
 
 ![Thumbnail](assets/Thumbnail.png)
 
-# Urban Scene Intelligence:<br>Object Detection & Tracking<br>with Azure Computer Vision
+# Urban Scene Intelligence: Object Detection & Tracking with Azure Computer Vision
 
 End-to-end cloud AI pipeline detecting and tracking multiple objects in images and video using the Microsoft Azure Computer Vision API — built with Python on Google Colab.
 
