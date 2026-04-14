@@ -1,6 +1,6 @@
 <div align="center">
 
-#### SIG788 · Engineering AI Solutions · Deakin University
+![Thumbnail](assets/Thumbnail.png)
 
 # Urban Scene Intelligence:<br>Object Detection & Tracking<br>with Azure Computer Vision
 
@@ -122,9 +122,7 @@ The architecture follows a **client-cloud model**: all orchestration logic runs 
 
 ## 04 · End-to-End Pipeline
 
-```
-🔐 Credential Setup → 💾 Data Loading → 📷 Image Detection → 🎬 Frame Sampling → 🔗 IoU Matching → 📈 Evaluation → 📊 Reporting
-```
+![End-to-end pipeline process flowchart](assets/End-to-end%20pipeline%20process%20flowchart.png)
 
 ### Stage descriptions
 
@@ -287,22 +285,27 @@ The Azure-hosted architecture scales automatically with demand — no infrastruc
 
 ```
 azure-cv-object-detection-tracking/
-├── Task5D_Complete.ipynb              # Main notebook — all 9 sections
-├── README.md                          # This file
-├── outputs/
-│   ├── detected_output.jpg            # Annotated detection result
-│   ├── confidence_chart.jpg           # Per-object confidence bar chart
-│   ├── tracking_trajectories.jpg      # 2×2 tracking dashboard
-│   ├── detection_metrics_table.jpg    # Styled Table 6 (detection eval)
-│   ├── tracking_metrics_table.jpg     # Styled Table 7 (tracking eval)
-│   ├── performance_chart.jpg          # Per-class metrics bar chart
-│   └── tracked_output.avi             # Annotated output video
-├── report/
-│   └── Nabankur_SIG788_Task_5D.pdf    # Final submitted report
-├── assets/
-│   ├── algorithm_flowchart.png        # Algorithm 1: IoU greedy matcher
-│   └── pipeline_diagram.png           # End-to-end pipeline figure
-└── requirements.txt                   # Python dependencies
+├── README.md                                                        # This file
+├── LICENSE                                                          # MIT License
+├── Notebook/
+│   └── Object Detection and Tracking.ipynb                          # Main notebook — all 9 sections
+├── Outputs/
+│   ├── original_image.jpg                                           # Original test image
+│   ├── detected_output.jpg                                          # Annotated detection result
+│   ├── confidence_chart.jpg                                         # Per-object confidence bar chart
+│   ├── tracking_trajectories.jpg                                    # 2×2 tracking dashboard
+│   ├── detection_metrics_table.jpg                                  # Styled Table 6 (detection eval)
+│   ├── detection_metrics_chart.jpg                                  # Detection metrics bar chart
+│   ├── tracking_metrics_table.jpg                                   # Styled Table 7 (tracking eval)
+│   ├── tracking_metrics_chart.jpg                                   # Tracking metrics bar chart
+│   └── tracked_output.avi                                           # Annotated output video
+├── Test Datasets/
+│   ├── Test_image.png                                               # Test image for detection
+│   └── Test_Video.mp4                                               # Test video for tracking
+└── assets/
+    ├── Thumbnail.png                                                # Project thumbnail
+    ├── End-to-end pipeline process flowchart.png                    # Pipeline flowchart
+    └── Create Computer Vision resource in Microsoft Azure.pdf       # Azure setup guide
 ```
 
 ---
@@ -318,8 +321,8 @@ azure-cv-object-detection-tracking/
 ### Step 1 — Clone and open
 
 ```bash
-git clone https://github.com/yourusername/azure-cv-object-detection-tracking
-# Then upload Task5D_Complete.ipynb to Google Colab
+git clone https://github.com/nabankur14/azure-cv-object-detection-tracking
+# Then upload Notebook/Object Detection and Tracking.ipynb to Google Colab
 ```
 
 ### Step 2 — Add Azure credentials to Colab Secrets
@@ -349,12 +352,11 @@ Runtime → Run all  (Ctrl+F9)
 
 ## 13 · Author
 
-**Nabankur Ray**
-AI/ML Engineering · Deakin University · SIG788
+👨‍💻 **Nabankur Ray**
 
-📧 [ray.nabankur@gmail.com](mailto:ray.nabankur@gmail.com) · 🔗 [LinkedIn](#) · 🏷 [GitHub](#)
+Passionate about real-world data-driven solutions
 
-Student ID: 225726056 · Unit: SIG788 – Engineering AI Solutions · Deakin University · April 2026
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-black?style=flat&logo=github)](https://github.com/nabankur14) [![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/nabankur-ray-876582181/)
 
 ---
 
