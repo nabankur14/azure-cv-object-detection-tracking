@@ -362,6 +362,6 @@ Passionate about real-world data-driven solutions
 
 <div align="center">
 
-Built with Python · Azure Computer Vision · Google Colab | Nabankur Ray · SIG788 · Deakin University · 2026 | ![MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+Built with Python · Azure Computer Vision · Google Colab | Nabankur Ray · Deakin University · 2026 | ![MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
 </div>
